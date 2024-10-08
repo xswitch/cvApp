@@ -27,6 +27,12 @@ function App() {
     setExperiences([...newList.slice(0, index), ...newList.slice(index + 1)])
   }
 
+  const editExperience = (index, experience) => {
+    const newList = [...experiences]
+    newList[index] = experience
+    setExperiences(newList)
+  }
+
   const addLanguage = (language) => setLanguages([...languages, language])
 
   const removeLanguage = (index) => {
@@ -140,7 +146,7 @@ function App() {
           id={4}
           className={'section languageSection'}
         >
-          <Experience add={addExperience} removeExperience={removeExperience} experiences={experiences}></Experience>
+          <Experience add={addExperience} removeExperience={removeExperience} editExperience={editExperience} experiences={experiences}></Experience>
         </Section>
       </div>
       <main>

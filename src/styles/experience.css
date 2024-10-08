@@ -13,4 +13,27 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.4rem;
+}
+
+.experienceListEntry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editExperience {
+  display: flex;
+  gap: 1rem;
+}
+
+.editExperience>button {
+  flex: 1;
 }
