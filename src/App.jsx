@@ -38,6 +38,12 @@ function App() {
     setEducationList(newList)
   }
 
+  const removeEducation = (index) => {
+    const newList = [...educationList]
+    const slicedList = [...newList.slice(0, index), ...newList.slice(index + 1)]
+    setEducationList(slicedList)
+  }
+
   return (
     <div className="content">
       <div className="sidebar">
@@ -93,7 +99,7 @@ function App() {
           id={2}
           className={'section educationSection'}
         >
-          <Education add={addEducation} educationList={educationList}></Education>
+          <Education add={addEducation} educationList={educationList} removeEducation={removeEducation}></Education>
         </Section>
         <Section
           title={"Language"}

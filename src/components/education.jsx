@@ -1,6 +1,6 @@
 import '../styles/education.css'
 
-export default function Education({add, educationList}) {
+export default function Education({add, educationList, removeEducation}) {
   const newEducation = {
     study: '',
     university: '',
@@ -16,14 +16,14 @@ export default function Education({add, educationList}) {
       <input type="text" placeholder="2020-2022" onChange={(e) => newEducation.date = e.target.value} />
       <button className='addButton' onClick={() => add(newEducation)}>ADD</button>
       {educationList.length > 0 && (
-        educationList.map((educationEntry) => {
+        educationList.map((educationEntry, index) => {
           return (
             <div key={crypto.randomUUID()} className="educationEntry">
               <p>{educationEntry.study}</p>
               <p>{educationEntry.university}</p>
               <p>{educationEntry.date}</p>
               <div>
-                <button className='removeButton'>REMOVE</button>
+                <button className='removeButton' onClick={() => removeEducation(index)}>REMOVE</button>
                 <button className='editButton'>EDIT</button>
               </div>
             </div>
