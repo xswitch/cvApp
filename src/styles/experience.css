@@ -1,0 +1,16 @@
+.experienceTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experienceEntry {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.experienceInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

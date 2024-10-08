@@ -4,6 +4,8 @@ import Section from "./components/section";
 import Input from "./components/input";
 import Cv from "./components/cv";
 import Education from "./components/education";
+import Language from "./components/language";
+import Experience from "./components/experience";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -14,8 +16,23 @@ function App() {
     aboutMe: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ipsam quasi laboriosam deleniti officiis omnis excepturi ab a ea pariatur fugiat sit mollitia quo nam nesciunt deserunt dolore, asperiores dolorum?'
   });
   const [educationList, setEducationList] = useState([])
-
+  const [languages, setLanguages] = useState([])
   const [openIndex, setOpenIndex] = useState(0);
+  const [experiences, setExperiences] = useState([])
+
+  const addExperience = (experience) => setExperiences([...experiences, experience])
+
+  const removeExperience = (index) => {
+    const newList = [...experiences];
+    setExperiences([...newList.slice(0, index), ...newList.slice(index + 1)])
+  }
+
+  const addLanguage = (language) => setLanguages([...languages, language])
+
+  const removeLanguage = (index) => {
+    const newList = [...languages];
+    setLanguages([...newList.slice(0, index), ...newList.slice(index + 1)])
+  }
 
   const changeProfile = (value, property) => {
     setProfile({
@@ -112,20 +129,22 @@ function App() {
           onClick={() => changeIndex(3)}
           index={openIndex}
           id={3}
+          className={'section languageSection'}
         >
-          <h3>Moar stuff</h3>
+          <Language add={addLanguage} removeLanguage={removeLanguage} languages={languages}></Language>
         </Section>
         <Section
           title={"Experience"}
           onClick={() => changeIndex(4)}
           index={openIndex}
           id={4}
+          className={'section languageSection'}
         >
-          <h3>EVEN MOAR</h3>
+          <Experience add={addExperience} removeExperience={removeExperience} experiences={experiences}></Experience>
         </Section>
       </div>
       <main>
-        <Cv profile={profile} educationList={educationList}></Cv>
+        <Cv profile={profile} educationList={educationList} languages={languages} experiences={experiences}></Cv>
       </main>
     </div>
   );

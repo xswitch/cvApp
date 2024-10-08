@@ -20,12 +20,6 @@
   gap: 2rem;
 }
 
-.cvTitle {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .headerPhoto {
   width: 200px;
   height: 200px;
@@ -47,13 +41,18 @@
   padding: 2rem;
 }
 
-.cvAboutMe {
+.cvMain,
+.cvSidebar {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.cvEducation {
+.cvEducation,
+.cvLanguage,
+.cvAboutMe,
+.cvTitle,
+.cvExperience {
   display: flex;
   flex-direction: column;
   gap: 1rem;
