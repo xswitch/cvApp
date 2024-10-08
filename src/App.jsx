@@ -44,6 +44,12 @@ function App() {
     setEducationList(slicedList)
   }
 
+  const editEducation = (index, editedEntry) => {
+    const newList = [...educationList]
+    newList[index] = editedEntry
+    setEducationList(newList)
+  }
+
   return (
     <div className="content">
       <div className="sidebar">
@@ -99,7 +105,7 @@ function App() {
           id={2}
           className={'section educationSection'}
         >
-          <Education add={addEducation} educationList={educationList} removeEducation={removeEducation}></Education>
+          <Education add={addEducation} educationList={educationList} removeEducation={removeEducation} editEducationEntry={editEducation}></Education>
         </Section>
         <Section
           title={"Language"}
