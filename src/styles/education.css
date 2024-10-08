@@ -1,0 +1,48 @@
+.educationEntry {
+  border: 1px solid gray;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.educationEntry>div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+button {
+  font-size: 1rem;
+  background-color: slategray;
+  border: 1px solid lightgray;
+  padding: 0.3rem;
+  font-family: inherit;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(50, 50, 50);
+}
+
+button:hover {
+  box-shadow: 0 0 5px 1px white;
+}
+
+.addButton {
+  background-color: lightgreen;
+}
+
+.removeButton {
+  background-color: lightcoral;
+}
+
+.editButton {
+  background-color: lightblue;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 0.3rem;
+}

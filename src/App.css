@@ -12,3 +12,9 @@ main {
   align-self: flex-start;
   height: 100%;
 }
+
+.educationSection {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}

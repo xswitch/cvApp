@@ -91,8 +91,9 @@ function App() {
           onClick={() => changeIndex(2)}
           index={openIndex}
           id={2}
+          className={'section educationSection'}
         >
-          <Education add={addEducation}></Education>
+          <Education add={addEducation} educationList={educationList}></Education>
         </Section>
         <Section
           title={"Language"}
