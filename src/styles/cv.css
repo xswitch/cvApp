@@ -1,0 +1,60 @@
+.cvContainer {
+  display: grid;
+  max-width: 920px;
+}
+
+.cvHeader {
+  display: grid;
+  grid-template-columns: 200px 2fr;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  justify-items: center;
+}
+
+.headerText {
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cvTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.headerPhoto {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: slategray;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+  color: lightgray;
+  border: 1px solid white;
+}
+
+.cvBody {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  height: 100%;
+  padding: 2rem;
+}
+
+.cvAboutMe {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cvEducation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

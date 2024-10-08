@@ -1,6 +1,14 @@
-content {
+.content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 2rem;
   align-items: center;
   width: 100dvw;
+  height: 100dvh;
+  padding: 2rem;
+}
+
+main {
+  align-self: flex-start;
+  height: 100%;
 }

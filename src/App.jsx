@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Section from "./components/section";
 import Input from "./components/input";
+import Cv from "./components/cv";
+import Education from "./components/education";
 
 function App() {
   const [profile, setProfile] = useState({
@@ -9,7 +11,9 @@ function App() {
     jobTitle: "Full Stack Developer",
     email: "bivarmong@gmail.com",
     phone: "93248199",
+    aboutMe: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ipsam quasi laboriosam deleniti officiis omnis excepturi ab a ea pariatur fugiat sit mollitia quo nam nesciunt deserunt dolore, asperiores dolorum?'
   });
+  const [educationList, setEducationList] = useState([])
 
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -28,8 +32,14 @@ function App() {
     }
   };
 
+  const addEducation = (education) => {
+    const newList = [...educationList]
+    newList.push(education)
+    setEducationList(newList)
+  }
+
   return (
-    <content>
+    <div className="content">
       <div className="sidebar">
         <Section
           title={"General"}
@@ -67,6 +77,14 @@ function App() {
             name={"phone"}
             value={profile.phone}
           ></Input>
+          <Input
+            text={'About Me'}
+            type="textarea"
+            placeholder={'Lorem Ipsum'}
+            onChange={changeProfile}
+            name={'aboutMe'}
+            value={profile.aboutMe}
+          ></Input>
         </Section>
         <Section
           title={"Education"}
@@ -74,7 +92,7 @@ function App() {
           index={openIndex}
           id={2}
         >
-          <h3>Stuff</h3>
+          <Education add={addEducation}></Education>
         </Section>
         <Section
           title={"Language"}
@@ -94,12 +112,9 @@ function App() {
         </Section>
       </div>
       <main>
-        <h2>{profile.name}</h2>
-        <h2>{profile.jobTitle}</h2>
-        <h2>{profile.email}</h2>
-        <h2>{profile.phone}</h2>
+        <Cv profile={profile} educationList={educationList}></Cv>
       </main>
-    </content>
+    </div>
   );
 }
 
