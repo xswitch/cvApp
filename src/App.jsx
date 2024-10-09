@@ -9,11 +9,11 @@ import Experience from "./components/experience";
 
 function App() {
   const [profile, setProfile] = useState({
-    name: "Bjørn Ivar",
+    name: "John Doe",
     jobTitle: "Full Stack Developer",
-    email: "bivarmong@gmail.com",
-    phone: "93248199",
-    aboutMe: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ipsam quasi laboriosam deleniti officiis omnis excepturi ab a ea pariatur fugiat sit mollitia quo nam nesciunt deserunt dolore, asperiores dolorum?'
+    email: "johndoe@gmail.com",
+    phone: "+4790807060",
+    aboutMe: ''
   });
   const [educationList, setEducationList] = useState([])
   const [languages, setLanguages] = useState([])
